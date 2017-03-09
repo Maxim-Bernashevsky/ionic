@@ -1,25 +1,26 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+<ion-header class="bar-positive">
+  <ion-toolbar>
+    <ion-navbar>
+      <ion-title>Home</ion-title>
+    </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
   <h2>To Do List:</h2>
   <ion-list>
 
-    <ion-item>
-      <ion-label>Herbology</ion-label>
-      <ion-checkbox color="dark" checked="true"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Herbology</ion-label>
-      <ion-checkbox color="dark" checked="true"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Herbology</ion-label>
-      <ion-checkbox color="dark" checked="true"></ion-checkbox>
+    <ion-item *ngFor="let todo of todos | async">
+      <ion-label>{{ todo.title }}</ion-label>
+      <ion-checkbox color="dark" (ionChange)="toggle(todo, $event)" [checked]=todo.status></ion-checkbox>
     </ion-item>
 
   </ion-list>
+
+  <ion-fab right bottom >
+    <button ion-fab color="vibrant"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
 </ion-content>
+
+<!--(click)="openModal({charNum: 0})"-->
