@@ -8,19 +8,17 @@
 
 <ion-content padding>
   <h2>To Do List:</h2>
-  <ion-list>
 
+  <ion-list>
     <ion-item *ngFor="let todo of todos | async">
       <ion-label>{{ todo.title }}</ion-label>
-      <ion-checkbox color="dark" (ionChange)="toggle(todo, $event)" [checked]=todo.status></ion-checkbox>
+      <ion-checkbox color="vibrant" (ionChange)="toggle(todo, $event)" [checked]=todo.status></ion-checkbox>
     </ion-item>
-
   </ion-list>
 
   <ion-fab right bottom >
-    <button ion-fab color="vibrant"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab mini color="vibrant" (click)="openModal({charNum: 0})"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
 </ion-content>
 
-<!--(click)="openModal({charNum: 0})"-->

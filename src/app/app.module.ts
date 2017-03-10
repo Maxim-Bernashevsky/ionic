@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AngularFireModule } from 'angularfire2';
 import { firebaseConfig }     from '../environments/firebase.config';
+import { ModalPage } from '../pages/modal/modal';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { firebaseConfig }     from '../environments/firebase.config';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ModalPage
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -27,7 +29,8 @@ import { firebaseConfig }     from '../environments/firebase.config';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ModalPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
